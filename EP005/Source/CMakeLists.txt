@@ -6,11 +6,12 @@ Project(HelloApp
         LANGUAGES CXX)
 
 #1 way to add source file
-#add_executable(HelloApp main.cpp src/dog.cpp src/Operation.cpp)
+add_executable(HelloApp main.cpp src/dog.cpp src/Operation.cpp)
 
+#Not Recommended
 #2 way to add source file using GLOBING feature
-file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
-add_executable(HelloApp main.cpp ${SOURCE_FILES})
+#file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
+#add_executable(HelloApp main.cpp ${SOURCE_FILES})
 
 target_compile_features(HelloApp PRIVATE cxx_std_20)
 
