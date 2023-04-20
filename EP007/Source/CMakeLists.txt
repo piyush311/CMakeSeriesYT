@@ -16,8 +16,8 @@ target_include_directories(Operation PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 #target_compile_features(Operation PUBLIC cxx_std_20)
 
 #Compile Static Library from different folder source files
-add_library(logger STATIC logger/src/log.cpp)
-target_include_directories(logger PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/logger/include)
+#add_library(logger STATIC logger/src/log.cpp)
+#target_include_directories(logger PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/logger/include)
 #target_compile_features(logger PUBLIC cxx_std_20)
 
 add_executable(HelloApp main.cpp
@@ -28,3 +28,5 @@ target_include_directories(HelloApp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #link the library create above to tge HelloApp Executable
 target_link_libraries(HelloApp PUBLIC Operation logger)
+
+add_subdirectory(logger)
